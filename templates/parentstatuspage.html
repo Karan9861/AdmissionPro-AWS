@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> ST. PATRICK'S ACADEMY </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style_karan.css') }}">
+  <style>
+    body {
+      background-image: url("{{ url_for('static', filename='images/download.jpg') }}");
+      background-size: cover;
+      margin: 0;
+      padding: 20px;
+    }
+    .slideshow-container {
+      overflow: hidden;
+      position: relative;
+      margin: auto;
+      width: 1200px;
+      height: 500px;
+    }
+
+    .slide {
+      display: none;
+      text-align: center;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 500px;
+      object-fit: auto;
+}
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      font-weight: bold;
+      padding: 10px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
+    }
+
+    .spacer {
+      height: 40px; /* Adjust the height as needed */
+    }
+
+    .centered-heading {
+      text-align: center;
+    }
+
+    .image-container {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .text-container {
+      text-align: center;
+    }
+    #status {
+            display: none;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+  .homepage {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+  .content {
+    text-align: center;
+    }
+
+    .logout-link {
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.logout-text-container {
+    background-color: whitesmoke; /* Set background color as needed */
+    color: #fff; /* Set text color as needed */
+    padding: 10px 20px; /* Set padding as needed */
+    border-radius: 5px; /* Add border radius for a rounded look */
+}
+
+.logout-text {
+    margin: 0;
+    text-align: center;
+}
+
+
+/* Add these styles to make the footer fixed at the bottom */
+footer.text-center {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    background-color: black; /* Optionally change the background color */
+    color: #fff; /* Optionally change the text color */
+}
+
+.logo {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */ /* You can adjust the height as needed */
+}
+.flash-popup {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 10px;
+                background-color: black; /* Set the background color you prefer for error messages */
+                color: #ffffff; /* Set the text color */
+                text-align: center;
+                z-index: 1000; /* Ensure it's on top of other elements */
+                display: none; /* Initially hidden */
+            }
+    
+    .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        /* Styles for the popup */
+    .popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            color:#000; 
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            text-align: center;
+      }
+
+        /* Style for the close button */
+    .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+      
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+  </style>
+</head>
+<body>
+    <h1>ST. PATRICK'S ACADEMY </h1>
+    <div class="logo">
+      <h1 class="text-center"><a href="#"> <img src="{{ url_for('static', filename='images/logo.jpg') }}"  class="rounded-circle"></a></h1>
+    </div> 
+    <main>
+      <div class="content">
+          <h1 span style="margin-top: 20px;color: aqua;">Application Status</h1>
+          <p>Enter your application number:</p>
+          <form method="POST">
+              <input type="text" name="applicationNumber" id="applicationNumber" placeholder="Enter application no." required>
+              <button type="submit" id="show-popup" span style="background-color: #3498db;
+              color: white;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;">&nbsp;Check Status&nbsp;</button>
+          </form>
+          {% if app_status %}
+          <div style="display: block;" class="overlay" id="overlay">
+            <div class="popup" id="popup">
+                <span class="close-button" id="close-popup">&times;</span>
+                <h2>Your Current Application Status is:</h2>
+                <p span style="color: #000;font-size: x-large;"><strong>{{ status }}</strong></p>
+                <p span style="color: #000;"><strong>Remark: </strong> {{feedback}} <br>
+                  Kindly contact office or visit school for Admission process & further information </p>
+                <button class="btn" id="ok-button" span style="background-color: sandybrown;border-color: #000;"><a href="{{ url_for('parentstatuspage') }}"> OK </a></button>
+            </div>
+          </div>
+          {% endif %}
+          <div id="status">
+              <h2>Your Current Application Status:</h2>
+              <p id="statusMessage">{{ status }}</p>
+          </div>
+          <p><strong>Note: </strong>Kindly contact office or visit school if facing any issues </p>
+      </div>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+          <div class="flash-popup" id="flash-popup">
+              {{ messages[-1][1] }}
+          </div>
+      {% endif %}
+      {% endwith %}
+      <div class="logout-link">
+          <div class="logout-text-container">
+              <a class="logout-text" href="/">Logout</a>
+          </div>
+      </div>  
+  </main>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <footer class="text-center">
+    &copy; ST. PATRICK'S ACADEMY, BANGALORE 2023
+  </footer>
+</body>
+<script>
+  const closePopup = document.getElementById("close-popup");
+  const popup = document.getElementById("popup");
+  const okButton = document.getElementById("ok-button");
+  // Close the popup when the close button is clicked
+  closePopup.addEventListener("click", function() {
+            overlay.style.display = "none";
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+    const flashPopup = document.getElementById('flash-popup');
+    if (flashPopup) {
+        flashPopup.style.display = 'block';
+        setTimeout(function() {
+            flashPopup.style.display = 'none';
+        }, 5000); // Display for 5 seconds (adjust as needed)
+      }
+    });
+</script>
+</html>

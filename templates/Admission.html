@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<head>
+    <title>Registration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_karan.css') }}">
+    <style>
+      body {
+      background-image: url("{{ url_for('static', filename='images/download.jpg') }}");
+      background-size: cover;
+      margin: 0;
+      padding: 20px;
+      }
+
+      hr { 
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 1px;
+      } 
+
+      button{
+        background-color: antiquewhite;
+        padding: 10px;
+        color: rgb(119, 40, 40);
+      }
+
+      button:hover {
+          background-color: rgb(150, 167, 162);
+      }
+
+      </style>
+</head>
+<body>
+  <div class="logo">
+    <h1><a href="#"> <img src="{{ url_for('static', filename='images/logo.jpg') }}"  class="rounded-circle"></a></h1>
+  </div> 
+    <h1 span style="margin-right: 120px;"> ST. PATRICK'S ACADEMY </h1>
+    <div class="main-menu">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+           <a class="navbar-brand" href="#"></a>
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+             <i class="fa fa-home"></i></li>
+           </button>
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+             <ul class="navbar-nav mr-auto">
+               <li class="nav-item">
+                 <a class="nav-link" href="\"><i class="fa fa-home"></i> Home <span class="sr-only">(current)</span></a>
+               </li>&nbsp&nbsp&nbsp&nbsp&nbsp
+               <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('About') }}"><i class="fa fa-user"></i> About us </a>
+               </li>&nbsp&nbsp&nbsp&nbsp&nbsp
+               <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('Admission') }}"><i class="fa fa-calendar"></i> Admission </a>
+              </li> &nbsp&nbsp&nbsp&nbsp&nbsp
+              <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-user"></i> Overview
+               </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <a class="dropdown-item" href="{{ url_for('facilities') }}">Facilites</a>
+               
+                 <a class="dropdown-item" href="{{ url_for('faculties') }}">Faculties</a>
+               </div>
+             </li>&nbsp&nbsp&nbsp&nbsp&nbsp
+             <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('Gallery') }}"><i class="fa fa-trophy"></i> Gallery</a>
+            </li> &nbsp&nbsp&nbsp&nbsp&nbsp
+
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('announcement') }}"><i class="fa fa-newspaper-o"></i> Announcements</a>
+            </li> &nbsp&nbsp&nbsp&nbsp&nbsp
+              <li class="nav-item">
+                  <li><a class="nav-link" href="{{ url_for('contact') }}"><i class="fa fa-graduation-cap"></i> Contact Us</a>
+             </li> &nbsp&nbsp&nbsp&nbsp&nbsp
+             
+              <li class="nav-item">
+                  <li><a class="nav-link" href="{{ url_for('login') }}"><i class="fa fa-sign-in"></i> Login</a>
+              </li>&nbsp&nbsp&nbsp&nbsp&nbsp
+            </ul>
+          </div>
+        </nav>     
+    <hr width="1250px">
+    </div>
+    </header>
+    <br>
+    <br>
+         <section class="aligning">
+         <h3 class="aligning"> <center> Instructions to fill Application form for LKG 2023-24
+          Submission of applications: 19th December 2022 to 05th January 2023
+          Applications have to be submitted on or before 05th January 2023 </center></h3>
+          <p>Steps to fill in the online application form. Please read the same carefully before proceeding.</p>
+          <hr>
+             <p><b>Step 1</b> : Register yourself onto the admission portal by clicking on the Register button and filling in the required details.</p>
+             <p><b>Step 2</b>: You will receive an email on your registered email id.</p>
+             <p><b>Step 3</b>. Confirm your registration by clicking on the link in the email.</p>
+             <p><b>Step 4</b>: You will be automatically redirected to the admission portal with a message of confirmation. Click on the Login button with your registered email-id and password. Check spam or junk folder if email is not received in the inbox or updates tab for Gmail.</p>
+             <p><b>Step 5</b>: Fill in the form and upload the relevant documents.</p>
+             <p><b>Step 6</b>: If you want to review the form please click on Save as Draft on the last page.</p>
+             <p><b>Step 7</b>: Click on the Submit button and make the payment through the payment gateway.</p>
+             <p><u><b>Note</b></u> : Once the form is submitted you will not be able to make any changes to the application form</p>
+             <p><b>Step 8</b>: You will get a receipt by email confirming your transaction.</p>
+             <p><b>Step 9</b>: Login to the admission portal and download the PDF which will be generated.</p>
+             <p><b>Step 10</b>: If the PDF is not available due to high server load you can login after 12 hours and download the PDF and print it for your reference.</p>
+            <hr>
+          <h4><b>Points to Note</b></h4>
+          <hr>
+          <p>* Birth Certificate issued by BBMP with child’s name or for other states an equivalent statutory authority.</p>
+          <p>* CSI Membership Certificate issued by the Presbyter-in-charge of the Church – KCD (if CSI member) indicating the period of membership.</p>
+          <p>* Baptism Certificate of child (if CSI member).</p>
+          <p>* Church Membership Certificate (if Christian other than CSI).</p>
+          <p>* Caste Certificate  (in case of SC / ST) issued by Tahsildar.</p>
+          <p>* Passport photo of child max size 170x132 pixels</p>
+          <p>* Parents Address proof – Aadhaar/ DL/ Voters ID/ Passport - any one proof.</p>
+          <p>* Self attested certificate of parent’s highest educational qualification.</p>
+          <p>* Old boy applying for their ward’s under the Old boy category should upload 10th Standard marks card or Transfer Certificate(TC) - TC is preferred.</p>
+          <p>* Staff of BCBS/BCGS/IT/GOVT Category - Present Working Certificate to be attached. In case it is difficult to get the working certificate during the application period, kindly upload a self-attested latest salary certificate or statement. Working certificate will have to be presented during verification of documents.</p>
+          <p>* Under Sibling Category – If Sibling studying in BCBS need to mention name and class presently studying and also upload latest term marks card.</p>
+          <h4><u><b>Terms and Conditions</u></b></h4>
+          <p>Incomplete forms will be rejected.</p>
+          <p>Forms with incorrect information will not be considered for the draw of lots.</p>
+          <p>Application for admission will not guarantee a seat.</p>
+          <p>The school will communicate admission details via email.</p>
+          <p>Attested copies of the corporation Birth Certificate must bear the child&rsquo;s name.</p>
+          <p>Parents of CSI candidates must submit the Baptism certificate of the child and the parent&rsquo;s church membership letter indicating the period of membership (issued by the Presbyter-in-charge).</p>
+          <p>Self-attested photocopies of the parents; (both) highest educational qualifications are mandatory.</p>
+          <p>Caste Certificate (in case of SC / ST) issued by Tahsildar.</p>
+          <p>BCBS/BCGS /KCD Staff / Govt / IT to attach employment certificates.</p>
+          <center> <p> <input type="checkbox" id="activateCheckbox"> Terms & Conditions<br></p></center>
+          <center>
+          <button id="button1" class="button" disabled>Online Application</button> &nbsp;
+          <button id="button2" class="button" disabled>Download Application</button>
+          </center>
+          <br>
+          <br>
+        </section>
+        <footer class="text-center">
+          &copy; ST. PATRICK'S ACADEMY, BANGALORE 2023
+        </footer>
+         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+         <script>
+          const activateCheckbox = document.getElementById("activateCheckbox");
+          const button1 = document.getElementById("button1");
+          const button2 = document.getElementById("button2");
+      
+          button1.addEventListener("click", function () {
+              window.location.href = "{{ url_for('login_application') }}"; // Replace with your desired URL
+          });
+          button2.addEventListener("click", function () {
+              window.location.href = "https://apsbangalore.edu.in/resources/assets/images/admission/REGNFORMCLI.pdf"; // Replace with your desired URL
+          });
+      
+          activateCheckbox.addEventListener("change", function () {
+              if (activateCheckbox.checked) {
+                  button1.removeAttribute("disabled");
+                  button2.removeAttribute("disabled");
+              } else {
+                  button1.setAttribute("disabled", "true");
+                  button2.setAttribute("disabled", "true");
+              }
+          });
+      </script>
+         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+    </html>

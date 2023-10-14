@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ST. PATRICK'S ACADEMY </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_karan.css') }}">
+    <style>
+      body {
+        background-image: url("{{ url_for('static', filename='images/download.jpg') }}");
+        background-size: cover;
+        margin: 0;
+        padding: 20px;
+      }
+
+        .header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    .event-container {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .event-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .event-title {
+      font-size: 24px;
+      margin: 10px 0;
+      color: rgb(25, 65, 65);
+    }
+
+    .event-image {
+    width: 700px;
+      height: 450px;
+      object-fit: auto;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    form {
+      margin-top: 25px;
+      margin-left: 180px;
+    }
+
+    label {
+      display: inline-block;
+      width: 150px;
+      margin-bottom: 5px;
+      color: whitesmoke;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select {
+      width: 600px;
+      padding: 10px;
+      border: 3px solid #ccc;
+      border-radius: 10px;
+      box-sizing: border-box;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center; /* Horizontal centering */
+      align-items: center; /* Vertical centering */ /* You can adjust the height as needed */
+    }
+    .flash-popup {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 10px;
+                background-color: black; /* Set the background color you prefer for error messages */
+                color: #ffffff; /* Set the text color */
+                text-align: center;
+                z-index: 1000; /* Ensure it's on top of other elements */
+                display: none; /* Initially hidden */
+            }
+    
+    .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        /* Styles for the popup */
+    .popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            color:#000; 
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            text-align: center;
+      }
+
+        /* Style for the close button */
+    .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>ST. PATRICK'S ACADEMY </h1></center>
+    <div class="logo">
+      <h1 class="text-center"><a href="#"> <img src="{{ url_for('static', filename='images/logo.jpg') }}"  class="rounded-circle"></a></h1>
+    </div>
+    <center><h1 span style="margin-top: 20px;color: aqua;">Payment Gateway</h1></center><br>
+    <div class="container">
+        <table>
+    <center>
+  <!-- Display image for Gpay/Phonepe -->
+  <div class="event-container">
+    <div class="event-card">
+        <h2 class="event-title">Online Transfer Details</h2>
+      <img src="{{ url_for('static', filename='images/BD1.jpeg') }}" alt="Online Transfer Details" class="event-image">
+      
+    </div> &nbsp&nbsp&nbsp
+    <div class="event-card">
+      <h2 class="event-title">Bank Details</h2>
+      <img src="{{ url_for('static', filename='images/BD.jpeg') }}" alt="Bank Details" class="event-image">
+    </div>
+</div>
+<!-- {{payment_status}} -->
+<div class="form-container">
+  <form id="paymentForm" method="POST" action="/payment">
+    <label for="paymentMode">Payment Mode:</label>
+    <select id="paymentMode" name="paymentMode" required style="width: 40%;">
+      <option value="" disabled selected>--Select Payment Mode--</option>
+      <option value="Online Transfer">Online Transfer</option>
+      <option value="Bank Transfer">Bank Transfer</option>
+    </select><br><br>
+  
+    <label for="Registration">Registration Fees:</label>
+    <input type="text" id="fees" style="background-color: beige; width: 40%;" name="fees" disabled required placeholder=" Rs. 150/-"><br><br>
+  
+    <label for="username">Transaction ID:</label>
+    <input type="text" type="number" name="transactionId" required style="width: 40%;" placeholder="Enter your Transaction ID"><br><br>
+  
+    <label for="contactNumber">Contact Number:</label>
+    <input type="text" type="number" name="contactNumber" maxlength="10" required style="width: 40%;" placeholder="Enter Contact Number"><br><br>
+  
+    <label for="transactionDate">Transaction Date:</label>
+    <input type="date" name="transactionDate" required style="width: 40%;"><br><br>
+    <button id="show-popup" class="btn">Submit</button>
+    {% if payment_status %}
+    <div style="display: block;" class="overlay" id="overlay">
+      <div class="popup" id="popup">
+          <span class="close-button" id="close-popup">&times;</span>
+          <h2>Application Submitted Successfully</h2>
+          <p span style="color: #000;">Your application number is: <input type="text" id="app-number" value={{app_id}} span style="width: 50px;" readonly></p>
+          <p span style="color: #000;">Login to your account to check the status of your application.</p>
+          <button class="btn" id="ok-button" span style="background-color: sandybrown;"><a href='/'>OK</a></button>
+      </div>
+  </div>
+    {% endif %}
+  </form>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+      <div class="flash-popup" id="flash-popup">
+          {{ messages[-1][1] }}
+      </div>
+  {% endif %}
+  {% endwith %}
+  <script>
+    // Get references to the overlay, close button, and OK button
+        const overlay = document.getElementById('overlay');
+        const appNumber = document.getElementById("app-number");
+        const showPopup = document.getElementById("show-popup");
+        const closePopup = document.getElementById("close-popup");
+        const popup = document.getElementById("popup");
+        const okButton = document.getElementById("ok-button");
+        const roleSelect = document.getElementById("role");
+        const transactionIdInput = document.getElementById("transactionId");
+        const contactNumberInput = document.getElementById("contactNumber");
+        const transactionDateInput = document.getElementById("transactionDate");
+
+        // Check if the app_id query parameter is present in the URL
+        const params = new URLSearchParams(window.location.search);
+        const app_id = params.get("app_id");
+        if (app_id) {
+            showPopup(app_id);
+        }
+
+        // Close the popup when the close button is clicked
+        closePopup.addEventListener("click", function() {
+            overlay.style.display = "none";
+        });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const flashPopup = document.getElementById('flash-popup');
+    if (flashPopup) {
+        flashPopup.style.display = 'block';
+        setTimeout(function() {
+            flashPopup.style.display = 'none';
+        }, 5000); // Display for 5 seconds (adjust as needed)
+      }
+    });
+  </script>
+</html>            

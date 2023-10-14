@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ST. PATRICK'S ACADEMY </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_karan.css') }}">
+    <style>
+      body {
+        background-image: url("{{ url_for('static', filename='images/download.jpg') }}");
+        background-size: cover;
+        margin: 0;
+        padding: 20px;
+      }
+
+        .header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .status-checkbox {
+            vertical-align: middle;
+        }
+
+        .status-checkbox input[type="checkbox"] {
+            display: none;
+        }
+
+        .status-checkbox label {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .status-checkbox label:before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        .status-checkbox input[type="checkbox"]:checked + label:before {
+            content: "✓"; /* Checkmark symbol */
+            color: #2ecc71; /* Green color */
+        }
+
+        .status-checkbox input[type="checkbox"]:not(:checked) + label:before {
+            content: " "; /* Empty space */
+        }
+
+        .text-box {
+            width: calc(100% - 44px); /* Adjusted width */
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .submit-button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+            margin-left: 310px;
+            color: white;
+        }
+
+        .logout-button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+            margin-top: 20px;
+        }
+
+        .logout-link {
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.logout-text-container {
+    background-color: cyan; /* Set background color as needed */
+    color: #fff; /* Set text color as needed */
+    padding: 10px 20px; /* Set padding as needed */
+    border-radius: 5px; /* Add border radius for a rounded look */
+}
+
+.logout-text {
+    margin: 0;
+    text-align: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */ /* You can adjust the height as needed */
+}
+    </style>
+</head>
+<body>
+    <h1>ST. PATRICK'S ACADEMY </h1>
+    <div class="logo">
+      <h1 class="text-center"><a href="#"> <img src="{{ url_for('static', filename='images/logo.jpg') }}"  class="rounded-circle"></a></h1>
+    </div>
+    <h1 span style="margin-top: 20px;color: aqua;">ADMIN PAGE</h1>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>App ID</th>
+                    <th>Approved</th>
+                    <th>Rejected</th>
+                    <th>Remark</th>
+                    <th>Submit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in admin_status_data %}
+                <tr>
+                    <form method="POST">
+                        <td span style="color:cyan">{{ data.app_id }}</td>
+                        <td>
+                            <input type="hidden" name="app_id" value="{{ data.app_id }}">
+                            <input type="radio" name="status_{{ data.app_id }}" {% if data.approved %} checked {% endif %} value="approved">
+                        </td>
+                        <td>
+                            <input type="hidden" name="app_id" value="{{ data.app_id }}">
+                            <input type="radio" name="status_{{ data.app_id }}" {% if data.rejected %} checked {% endif %} value="rejected">
+                        </td>
+                        <td>
+                            <input type="hidden" name="app_id" value="{{ data.app_id }}">
+                            <input type="text" name="remark" placeholder="Remark" value="{{ data.remark }}">
+                        </td>
+                        <td>
+                            <input type="submit" value="Submit">
+                        </td>
+                    </form>
+                </tr>
+                {% endfor %}
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>        
+        
+        <div class="logout-link">
+            <div class="logout-text-container">
+              <a class="logout-text" href="\">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const submitButtons = document.querySelectorAll('.submit-button');
+            for (const submitButton of submitButtons) {
+                submitButton.addEventListener('click', function (event) {
+                    const remarkInput = event.target.form.querySelector('input[name="remark"]');
+                    if (!remarkInput.value) {
+                        event.preventDefault();
+                        alert('Please provide a remark before submitting.');
+                    }
+                });
+            }
+        });
+    </script>
+      
+</body>
+</html>

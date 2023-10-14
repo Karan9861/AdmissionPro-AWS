@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("{{ url_for('static', filename='images/download.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin-top: 25px;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 80%; /* Adjust the width as needed */
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .login-heading {
+            font-size: 30px; /* Adjust the font size as needed */
+            margin-bottom: 30px;
+            margin-top: 5px;
+            text-align: center;
+            color: #007bff;
+            text-decoration: underline; /* Change the text color to a suitable one */
+        }
+
+        .form-container {
+            text-align: left;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            width: 300px;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .password-toggle {
+            position: absolute;
+            top: 36%;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .btn {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      background-color: blue;
+    }
+
+        .register-link a {
+            text-decoration: underline;
+            color: #007bff;
+        }
+        .btn {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .flash-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: black; /* Set the background color you prefer for error messages */
+            color: #ffffff; /* Set the text color */
+            text-align: center;
+            z-index: 1000; /* Ensure it's on top of other elements */
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+<div class="login-container">
+    <h3 class="login-heading">Parent Login</h3>
+    
+    <div class="form-container">
+        <form id="loginForm1" method="POST" action="/login_application">
+          <label for="role">Role:</label><br>
+          <select id="role" name="role" required style="width: 60%;">
+              <option value="" disabled selected>--Select the Role--</option>
+              <option value="parent">Parent</option>
+          </select>          
+          
+            <br>
+            <label for="username">Username:</label>
+            <input type="text" name="username" placeholder="Enter your username" required>
+            <br>
+            <label for="password">Password:</label>
+            <div class="password-container">
+                <input type="password" name="password" placeholder="Enter your password" required>
+                <span class="password-toggle" onclick="togglePassword()">
+              </span>
+              
+            </div>
+            <br>
+            <center>
+            <button type="submit" class="btn">Submit</button>
+            <button type="button" class="btn" onclick="goBack()">Go Back</button>
+        </center>
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-popup" id="flash-popup">
+                {{ messages[-1][1] }}
+            </div>
+        {% endif %}
+        {% endwith %}
+    </div>
+    <br>
+</div>
+
+<script>
+    function togglePassword() {
+        var passwordField = document.getElementById("password");
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+        } else {
+            passwordField.type = "password";
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const flashPopup = document.getElementById('flash-popup');
+    if (flashPopup) {
+        flashPopup.style.display = 'block';
+        setTimeout(function() {
+            flashPopup.style.display = 'none';
+        }, 5000); // Display for 5 seconds (adjust as needed)
+    }
+});
+function goBack() {
+                    window.history.back();
+                  }
+</script>
+</body>
+</html>

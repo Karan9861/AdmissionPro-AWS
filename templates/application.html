@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<head>
+    <title>Registration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_karan.css') }}">
+    <style>
+      body {
+      background-image: url("{{ url_for('static', filename='images/download.jpg') }}");
+      background-size: cover;
+      margin: 0;
+      padding: 20px;
+      }
+		hr { 
+		  display: block;
+		  margin-top: 0.5em;
+		  margin-bottom: 0.5em;
+		  margin-left: auto;
+		  margin-right: auto;
+		  border-style: inset;
+      border-width: 1px;
+		} 
+
+    form {
+      margin-top: 25px;
+      margin-left: 180px;
+    }
+
+    label {
+      display: inline-block;
+      width: 150px;
+      margin-bottom: 5px;
+      color: whitesmoke;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select {
+      width: 600px;
+      padding: 10px;
+      border: 3px solid #ccc;
+      border-radius: 10px;
+      box-sizing: border-box;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    .btn {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #777;
+    }
+    .logo {
+      display: flex;
+      justify-content: center; /* Horizontal centering */
+      align-items: center; /* Vertical centering */ /* You can adjust the height as needed */
+    }
+      /* Style for the pop-up */
+  .flash-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: black; /* Set the background color you prefer for error messages */
+            color: #ffffff; /* Set the text color */
+            text-align: center;
+            z-index: 1000; /* Ensure it's on top of other elements */
+            display: none; /* Initially hidden */
+        }
+  </style>
+    </head>
+            <body>
+            <h1 span style="color: aqua;margin-left: 10px;text-decoration: solid underline;">STUDENT REGISTRATION</h1>
+            <br>
+            <div class="container">
+              <form id="applicationForm" method="POST" action="/application">
+                
+                <label for="user_id">User ID:</label>
+                <input type="text" name="user_id" id="user_id" value= "{{user_id}}" readonly span style="color:black"><br>
+
+                <label for="fname">First Name:</label>
+                <input type="text" name="fname" maxlength="11" required placeholder="e.g., Tiger"><br>
+          
+                <label for="mname">Middle Name:</label>
+                <input type="text" name="mname" maxlength="11" placeholder="e.g., Muthuvel"><br>
+          
+                <label for="lname">Last Name:</label>
+                <input type="text" name="lname" maxlength="11" required placeholder="e.g., Pandian"><br>
+          
+                <label for="gender">Gender:</label>
+                <input type="radio" name="gender" value="boy">
+                <label for="boy">Boy</label>
+                <input type="radio" name="gender" value="girl">
+                <label for="girl">Girl</label><br>
+          
+                <label for="birthday">DOB:</label>
+                <input type="date" name="birthday"><br>
+          
+                <label for="fatherName">Father's Name:</label>
+                <input type="text" name="fatherName" maxlength="20" required placeholder="e.g., Rajinikanth"><br>
+          
+                <label for="fatherOccupation">Father's Occupation:</label>
+                <input type="text" name="fatherOccupation" maxlength="20" required placeholder="e.g., Actor"><br>
+          
+                <label for="fatherEmail">Father's Email:</label>
+                <input type="email" name="fatherEmail" placeholder="e.g., Rajinikanth169@gmail.com"><br>
+          
+                <label for="motherName">Mother's Name:</label>
+                <input type="text" name="motherName" maxlength="20" required placeholder="e.g., Latha"><br>
+          
+                <label for="motherOccupation">Mother's Occupation:</label>
+                <input type="text" name="motherOccupation" maxlength="20" required placeholder="e.g., Writer"><br>
+          
+                <label for="motherEmail">Mother's Email:</label>
+                <input type="email" name="motherEmail" placeholder="e.g., Latha69@gmail.com"><br>
+          
+                <label for="address">Residential Address:</label>
+                <input type="text" name="address" maxlength="200" required placeholder="e.g., 123 Main Street, City, Country"><br>
+
+                <label for="mobile">Contact Number:</label>
+                <input type="text" name="mobile" maxlength="10" placeholder="e.g., 1234567890"><br>
+          
+                <label for="religion">Religion:</label>
+                <select name="religion" id="religion">
+                  <option value="Hindu">Hindu</option>
+                  <option value="Christian">Christian</option>
+                  <option value="Muslim">Muslim</option>
+                  <option value="Others">Others</option>
+                </select><br>                
+                <input span style="margin-left: 155px;" type="text" id="customReligion" name="customReligion" maxlength="7" disabled required placeholder="e.g., If others"><br>
+                <br>
+                <center>
+                  <button type="button" class="btn" onclick="goBack()">Go Back</button>
+                  <button type="submit" class="btn">Submit</button>
+                </center>
+              </form>
+
+              {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                  <div class="flash-popup" id="flash-popup">
+                      {{ messages[-1][1] }}
+                  </div>
+              {% endif %}
+              {% endwith %}
+
+                <script>
+                  // Original JavaScript functionalities
+                  
+                  // For religion box
+                  const religionDropdown = document.getElementById("religion");
+                  const customReligionInput = document.getElementById("customReligion");
+                
+                  religionDropdown.addEventListener("change", function () {
+                    if (religionDropdown.value === "Others") {
+                      customReligionInput.removeAttribute("disabled");
+                    } else {
+                      customReligionInput.setAttribute("disabled", "true");
+                    }
+                  });
+                
+                  function goBack() {
+                    window.history.back();
+                  }
+
+                  document.addEventListener('DOMContentLoaded', function() {
+                    const flashPopup = document.getElementById('flash-popup');
+                    if (flashPopup) {
+                        flashPopup.style.display = 'block';
+                        setTimeout(function() {
+                            flashPopup.style.display = 'none';
+                        }, 5000); // Display for 5 seconds (adjust as needed)
+                      }
+                  });
+                </script>
+            </div>
+            <footer class="text-center" span style="color: white;">
+              &copy; ST. PATRICK'S ACADEMY, BANGALORE 2023</footer>
+        </body>
+        </html>

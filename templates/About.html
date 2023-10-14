@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> ST. PATRICK'S ACADEMY </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_karan.css') }}">
+    <style>
+      body {
+      background-image: url("{{ url_for('static', filename='images/download.jpg') }}");
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    h2 {
+      text-align: center;
+      color: aqua   ;
+    }
+    
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+    
+    .image {
+      flex: 1;
+      text-align: center;
+    }
+    
+    .image img {
+      width: 50%;
+      border-radius: 50%;
+    }
+    
+    .content {
+      flex: 1;
+      margin-left: 30px;
+    }
+    
+    .content p {
+      line-height: 1.6;
+      color: #0b0b0b;
+    }
+    
+    .content a {
+      color: #110f12;
+      text-decoration: none;
+    }
+    
+    .content a:hover {
+      text-decoration: underline;
+    }
+
+    #about-link {
+    color: white;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1><a href="#"> <img src="{{ url_for('static', filename='images/logo.jpg') }}"  class="rounded-circle"></a></h1>
+    </div> 
+      <h1 span style="margin-right: 120px;"> ST. PATRICK'S ACADEMY </h1>
+      <div class="main-menu">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+             <a class="navbar-brand" href="#"></a>
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               <i class="fa fa-home"></i></li>
+             </button>
+             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav mr-auto">
+                 <li class="nav-item">
+                   <a class="nav-link" href="\"><i class="fa fa-home"></i> Home <span class="sr-only">(current)</span></a>
+                 </li>&nbsp&nbsp&nbsp&nbsp&nbsp
+                 <li class="nav-item active">
+                  <a class="nav-link" href="{{ url_for('About') }}"><i class="fa fa-user"></i> About us </a>
+                 </li>&nbsp&nbsp&nbsp&nbsp&nbsp
+                 <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('Admission') }}"><i class="fa fa-calendar"></i> Admission </a>
+              </li> &nbsp&nbsp&nbsp&nbsp&nbsp
+              <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-user"></i> Overview
+               </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <a class="dropdown-item" href="{{ url_for('facilities') }}">Facilites</a>
+               
+                 <a class="dropdown-item" href="{{ url_for('faculties') }}">Faculties</a>
+               </div>
+             </li>&nbsp&nbsp&nbsp&nbsp&nbsp
+             <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('Gallery') }}"><i class="fa fa-trophy"></i> Gallery</a>
+            </li> &nbsp&nbsp&nbsp&nbsp&nbsp
+
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('announcement') }}"><i class="fa fa-newspaper-o"></i> Announcements</a>
+            </li> &nbsp&nbsp&nbsp&nbsp&nbsp
+              <li class="nav-item">
+                  <li><a class="nav-link" href="{{ url_for('contact') }}"><i class="fa fa-graduation-cap"></i> Contact Us</a>
+             </li> &nbsp&nbsp&nbsp&nbsp&nbsp
+             
+              <li class="nav-item">
+                  <li><a class="nav-link" href="{{ url_for('login') }}"><i class="fa fa-sign-in"></i> Login</a>
+              </li>&nbsp&nbsp&nbsp&nbsp&nbsp
+            </ul>
+          </div>
+        </nav>     
+    <hr width="1250px">
+    </div>
+  </header>
+  <h2>About Us</h2>
+  <div class="container">
+    <div class="image">
+      <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="About Us Image">
+    </div>
+    <div class="content">
+      <p span style="color: rgb(176, 201, 223);text-align: justify">
+        St. Patrick's Academy is a prestigious institution dedicated to providing quality education to students. Our mission is to nurture young minds and empower them to reach their full potential. With a team of highly qualified teachers and state-of-the-art facilities, we strive to create a conducive learning environment for our students.
+      </p>
+      <p span style="color: rgb(176, 201, 223);text-align: justify">
+        We offer a comprehensive curriculum that focuses on academic excellence, character development, and holistic growth. Our students are encouraged to explore their interests and talents through various co-curricular activities, ensuring their overall development.
+      </p>
+
+      <h3>Our Vision</h3>
+      <p span style="color: rgb(176, 201, 223);text-align: justify">
+        At St. Patrick's Academy, we envision a future where every student is equipped with the knowledge, skills, and values to thrive in a rapidly changing world. We strive to foster a love for learning, critical thinking, and innovation, preparing our students to become responsible global citizens.
+      </p>
+      <h3>Our Facilities</h3>
+      <p span style="color: rgb(176, 201, 223);text-align: justify">
+        Our school boasts state-of-the-art facilities, including modern classrooms, well-equipped science and computer labs, a library stocked with a vast collection of books, and sports facilities that cater to a wide range of interests. We believe that providing a stimulating environment is essential for the holistic development of our students.
+      </p>
+    </div>
+  </div>
+  <footer class="text-center">
+    &copy; ST. PATRICK'S ACADEMY, BANGALORE 2023
+  </footer>
+</body>
+</html>

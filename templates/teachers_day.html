@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher's Day Photo Gallery</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  .header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 10px;
+    padding: 20px;
+  }
+
+  .gallery img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+  }
+
+  .back-link {
+    display: inline-block;
+    background-color: #555;
+    color: cyan;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+
+  .back-link:hover {
+    background-color: palevioletred;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>TEACHER'S DAY GALLERY</h1>
+  </div>
+
+  <div class="gallery">
+    <img src="{{ url_for('static', filename='images/Teacher\'s Day 1.jpg') }}" alt="Teacher's Day 1">
+    <img src="{{ url_for('static', filename='images/Teacher\'s Day 2.jpg') }}" alt="Teacher's Day 2">
+    <img src="{{ url_for('static', filename='images/Teacher\'s Day 3.jpg') }}" alt="Teacher's Day 3">
+    <!-- Add more images as needed -->
+  </div>
+
+<center><a href="{{ url_for('Gallery') }}" class="back-link">Go Back to Main Gallery</a></center>
+
+</body>
+</html>

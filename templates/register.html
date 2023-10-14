@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("{{ url_for('static', filename='images/download.jpg') }}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 25px;
+  }
+
+  input {
+    width: 500px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .Register-heading {
+    color: whitesmoke;
+    font-size: 45px; 
+    margin-top: 1px; 
+    text-align: center;
+  }
+
+  .password-container {
+    position: relative;
+  }
+
+  .password-toggle {
+    position: absolute;
+    top: 36%;
+    left: 320px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  button:hover { background-color: blue; }
+
+  .text_font{
+    font: 20px;
+
+  }
+
+  .error-message {
+    color: cyan;
+    margin-top: 5px;
+  }
+
+  /* Style for the pop-up */
+  .flash-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: black; /* Set the background color you prefer for error messages */
+            color: #ffffff; /* Set the text color */
+            text-align: center;
+            z-index: 1000; /* Ensure it's on top of other elements */
+            display: none; /* Initially hidden */
+        }
+
+</style>
+</head>
+<body>
+<div class="registration-container">
+  <h2 class="Register-heading">REGISTER</h2>
+    <form id="registrationForm" method="POST" action="/register">
+      <label for="fullName">Full Name:</label>
+      <br>
+      <input type="text" name="fullName" placeholder="Enter your full name" required>
+      <br>
+      <label for="email">Email ID:</label>
+      <br>
+      <input type="email" name="email" placeholder="Enter your email address" required>
+      <br>
+      <label for="contactNumber">Contact Number:</label>
+      <br>
+      <input type="tel" name="contactNumber" placeholder="Enter your contact number" required pattern="[0-9]{10}" title="Contact number must be 10 digits and contain only numbers" maxLength="10" oninput="this.value = this.value.slice(0, 10)">
+      <br>
+      <label for="password">Password:</label>
+      <br>
+      <div class="password-container"> <input type="password" name="password" placeholder="Enter your password" required pattern=".{8,15}" title="Password must be between 8 to 15 characters" maxLength="15" oninput="this.value = this.value.slice(0, 15)" > </div>
+      <label for="confirmPassword">Confirm Password:</label>
+      <br>
+      <div class="password-container">
+        <input type="password" name="confirmPassword" placeholder="Confirm your password" required>     
+        <p class="error-message" id="passwordError"></p>
+      </div>
+      <button type="submit">Register</button>
+  </form>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-popup" id="flash-popup">
+                {{ messages[-1][1] }}
+            </div>
+        {% endif %}
+  {% endwith %}
+</div>
+<script>
+const registrationForm = document.getElementById("registrationForm");
+const passwordField = document.getElementById("password");
+const confirmPasswordField = document.getElementById("confirmPassword");
+const passwordError = document.querySelector('.password-container .error-message');
+
+registrationForm.addEventListener("submit", (event) => {
+
+if (passwordField.value !== confirmPasswordField.value) {
+
+  passwordError.innerText = "Passwords do not match";
+  passwordError.style.display = "block";
+
+  // Prevent form submission
+  event.preventDefault();
+
+} else {
+
+  passwordError.style.display = "none";
+
+}
+
+});
+
+function togglePassword(fieldId) {
+  const field = document.getElementById(fieldId);
+
+  if(fieldId === "password") {
+    if (field.type === "password") {
+      field.type = "text";
+    } else {  
+      field.type = "password";
+    }
+  }
+
+  if(fieldId === "confirmPassword") {
+    if (field.type === "password") {
+      field.type = "text";
+    } else {
+      field.type = "password";
+    }
+  }
+
+}
+document.addEventListener('DOMContentLoaded', function() {
+    const flashPopup = document.getElementById('flash-popup');
+    if (flashPopup) {
+        flashPopup.style.display = 'block';
+        setTimeout(function() {
+            flashPopup.style.display = 'none';
+        }, 5000); // Display for 5 seconds (adjust as needed)
+    }
+});
+</script>
+</body>
+</html>
