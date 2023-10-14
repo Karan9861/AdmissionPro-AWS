@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: century gothic;
+}
+
+
+header{
+    /*height: 500vh;*/
+    min-height: 35vh;
+    width: 1450px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: fixed;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+}
+
+ul{
+    list-style-type: none;
+    margin-top: 30px;
+}
+ul li{
+    display: inline-block;
+}
+ul li a{
+    text-decoration: none;
+    color:white;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.6s ease;
+}
+ 
+ul li a:hover{
+    background-color:black;
+    color:white;
+}
+
+.logo img{
+    float: left;
+    width: 150px;
+    height: top;
+}
+.main-menu
+{
+    background-color : none;
+    max-width: 1200px; 
+    margin: auto;
+}
+.title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.title h1{
+    color: white;
+    font-size: 50px;
+
+}
+.sub-menu-1
+{
+    display: none;
+}
+.main-menu ul li a:hover .sub-menu-1
+{
+    display: block;
+    position: absolute;
+    margin-top: 15px;
+    margin-left: -15px;
+
+}
+
+.main-menu ul li:hover .sub-menu-1 ul
+{
+display: block;
+margin: 10px;
+
+}
+/*.login{ 
+    margin-top: 10px;
+	margin-bottom: 15px;
+	border: 20px;
+    padding-right: 500px;
+    align-content: center;
+
+}*/
+.signup{
+    margin-top: 100px;
+	margin-bottom: 150px;
+	border: 200px;
+    padding-left: 200px;
+    align-content: center;
+}
+
+p{
+     color: white;
+    font-size: 20px;
+    margin-top: 25px;
+    align-content: center;
+}
+h3{ color: white;
+    font-size: 35px;
+align-content: center;
+
+}
+h5{ color: white;
+    font-size: 35px;
+align-content: center;
+}
+.login a{
+    margin-top: 100px;
+	margin-bottom: 150px;
+	border: 200px;
+    padding-left: 500px;
+    align-content: center;
+    color:blue;
+    font-size: 25px;
+    position: center;
+    text-align: center;
+}
+.form-group{
+    align-items: center;
+    color: white;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: left;
+  }
+  body {
+    /*background-image: url("C:\Users\rmart\Desktop\MajorProject\farcry3.jpg");*/
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: auto;
+    background-position: inherit;
+  }
+office{
+ padding: 30%;
+}
+h1{
+    text-align: center;
+    color: white;
+}
+.historylist a:hover
+{
+   text-decoration: none;
+   color: white;
+   background-color: black;
+}
+
