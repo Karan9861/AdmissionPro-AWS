@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 # Configure the RDS MySQL database connection
-app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+mysqlconnector://admin:project123@{os.environ['SQLALCHEMY_DATABASE_URI']}:3306/school"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI')
 db = SQLAlchemy(app)
 
 # Set a secret key for the application
