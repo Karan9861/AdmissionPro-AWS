@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+
 app = Flask(__name__)
 # Configure the RDS MySQL database connection
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://admin:project123@database-1.chq8ihup9mge.ap-south-1.rds.amazonaws.com:3306/school'
