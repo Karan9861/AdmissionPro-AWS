@@ -47,7 +47,7 @@ ul li a:hover{
     background-color : none;
     max-width: 1200px; 
     margin: auto;
-}
+    }
 .title{
     position: absolute;
     top: 50%;
@@ -102,12 +102,12 @@ p{
 }
 h3{ color: white;
     font-size: 35px;
-align-content: center;
+    align-content: center;
 
 }
 h5{ color: white;
     font-size: 35px;
-align-content: center;
+    align-content: center;
 }
 .login a{
     margin-top: 100px;
