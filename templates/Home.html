@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style_karan.css') }}">
   <style>
     body {
-      background-image: url("{{ url_for('static', filename='images/download.jpg') }}");
+      background-color: #341839;
       background-size: cover;
       margin: 0;
       padding: 20px;
@@ -137,14 +137,18 @@
   <main>
     <div class="slideshow-container">
       <div class="slide">
-        <img src="{{ url_for('static', filename='images/school.jpg') }}" alt="Image 1">
+        <img src="{{ url_for('static', filename='images/school building.jpeg') }}" alt="Image 1">
       </div>
       <div class="slide">
-        <img src="{{ url_for('static', filename='images/playground.jpg') }}" alt="Image 2">
+        <img src="{{ url_for('static', filename='images/School investiture.jpeg') }}" alt="Image 2">
       </div>
       <div class="slide">
-        <img src="{{ url_for('static', filename='images/board.jpg') }}" alt="Image 3">
+        <img src="{{ url_for('static', filename='images/NCC.jpeg') }}" alt="Image 3">
       </div>
+      <div class="slide">
+        <img src="{{ url_for('static', filename='images/Lab.jpeg') }}" alt="Image 4">
+      </div>
+  
   
       <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
       <a class="next" onclick="changeSlide(1)">&#10095;</a>
@@ -182,10 +186,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            &nbsp&nbsp<img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="About Us Image" class="image-container">
+            &nbsp&nbsp<img src="{{ url_for('static', filename='images/logo1.png') }}" alt="About Us Image" class="image-container">
           </div>
           <div class="col-md-6">
-            <h2 class="text-center"  span style="color: cyan;text-decoration:double;">About Us</h2>
+            <h2 class="text-center"  span style="color: rgb(255, 255, 255);text-decoration:double;"><strong>About Us</strong></h2>
             <p span style="text-align: justify">
               ST. PATRICK'S ACADEMY is a prestigious institution dedicated to providing quality education to students. Our mission is to nurture young minds and empower them to reach their full potential. With a team of highly qualified teachers and state-of-the-art facilities, we strive to create a conducive learning environment for our students.
             </p>

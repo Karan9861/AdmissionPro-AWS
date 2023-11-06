@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("{{ url_for('static', filename='images/download.jpg') }}");
+    background-color: #341839;
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 25px;
@@ -88,22 +88,22 @@
 <div class="registration-container">
   <h2 class="Register-heading">REGISTER</h2>
     <form id="registrationForm" method="POST" action="/register">
-      <label for="fullName">Full Name:</label>
+      <label for="fullName" style="color: white;">Full Name:</label>
       <br>
       <input type="text" name="fullName" placeholder="Enter your full name" required>
       <br>
-      <label for="email">Email ID:</label>
+      <label for="email" style="color: white;">Email ID:</label>
       <br>
       <input type="email" name="email" placeholder="Enter your email address" required>
       <br>
-      <label for="contactNumber">Contact Number:</label>
+      <label for="contactNumber" style="color: white;">Contact Number:</label>
       <br>
       <input type="tel" name="contactNumber" placeholder="Enter your contact number" required pattern="[0-9]{10}" title="Contact number must be 10 digits and contain only numbers" maxLength="10" oninput="this.value = this.value.slice(0, 10)">
       <br>
-      <label for="password">Password:</label>
+      <label for="password" style="color: white;">Password:</label>
       <br>
       <div class="password-container"> <input type="password" name="password" placeholder="Enter your password" required pattern=".{8,15}" title="Password must be between 8 to 15 characters" maxLength="15" oninput="this.value = this.value.slice(0, 15)" > </div>
-      <label for="confirmPassword">Confirm Password:</label>
+      <label for="confirmPassword" style="color: white;">Confirm Password:</label>
       <br>
       <div class="password-container">
         <input type="password" name="confirmPassword" placeholder="Confirm your password" required>     
