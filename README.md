@@ -91,7 +91,3 @@ Welcome to the Streamlined School Admission Website project! This initiative aim
 ## Feedback
 
 Feel free to provide any feedback or suggestions for improvement. We appreciate your involvement in making this project a success!
-
----
-
-*Note: Replace placeholders (your-username, Your Name, Collaborator 1, Collaborator 2) with appropriate information.*
